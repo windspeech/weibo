@@ -8,6 +8,7 @@ use Illuminate\Notifications\Notifiable;
 
 class User extends Authenticatable
 {
+    protected $dateFormat = 'Y-m-d H:i:s';
     use Notifiable;
 
     /**
@@ -34,7 +35,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $casts = [
-        'email_verified_at' => 'datetime',
+        'email_verified_at' => 'datetime'
     ];
 
     public function gravatar($size = '100')
