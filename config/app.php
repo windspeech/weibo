@@ -162,10 +162,6 @@ return [
         Illuminate\Validation\ValidationServiceProvider::class,
         Illuminate\View\ViewServiceProvider::class,
         /* 
-        * help
-        */
-        Barryvdh\LaravelIdeHelper\IdeHelperServiceProvider::class,
-        /* 
         * lang
         */
         Overtrue\LaravelLang\TranslationServiceProvider::class,
