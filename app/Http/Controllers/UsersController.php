@@ -61,7 +61,7 @@ class UsersController extends Controller
         $to = $user->email;
         $subject = '感谢注册 Weibo 应用！请确认你的邮箱。';
 
-        Mail::send($view, $data, function ($message) use ($from, $name, $to,$subject) {
+        Mail::send($view, $data, function ($message) use ($from, $name, $to, $subject) {
             $message->from($from, $name)->to($to)->subject($subject);
         });
     }
@@ -111,9 +111,10 @@ class UsersController extends Controller
     public function confirmEmail($token)
     {
         $user = User::where('activation_token', $token)->firstOrFail();
+
         $user->activated = true;
         $user->activation_token = null;
-        $user.save();
+        $user->save();
 
         Auth::login($user);
         session()->flash('success', '恭喜你，激活成功！');
