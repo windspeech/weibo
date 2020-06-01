@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Database\Seeder;
-use App\Models\User;
+use App\models\User;
 
 class FollowersTableSeeder extends Seeder
 {
